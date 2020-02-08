@@ -1,0 +1,47 @@
+{
+  "name": "Wegmans Shopping Assistant",
+  "version": "0.1",
+  "description": "A smart shopping assistant cares about your health, build only for Wegmans.",
+  "permissions": [
+    "activeTab",
+    "notifications",
+    "alarms",
+    "debugger",
+    "declarativeContent",
+    "storage"
+  ],
+  "options_page": "src/options/options.html",
+  "background": {
+    "scripts": [
+      "js/jquery.min.js",
+      "src/bg/background.js"
+    ],
+    "persistent": false
+  },
+  "page_action": {
+    "default_popup": "src/popup/popup.html",
+    "default_icon": {
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://shop.wegmans.com/*"
+      ],
+      "css": [
+        "src/inject/inject.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://shop.wegmans.com/*"
+      ],
+      "js": [
+        "src/inject/inject.js"
+      ]
+    }
+  ],
+  "icons": {
+  },
+  "manifest_version": 2
+}
