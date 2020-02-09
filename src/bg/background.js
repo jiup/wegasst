@@ -5,8 +5,14 @@
 'use strict';
 
 chrome.runtime.onInstalled.addListener(function () {
-    chrome.storage.sync.set({color: '#3aa757'}, function () {
-        console.log('The color is green.');
+    chrome.storage.sync.get('uid', function(data0) {
+        if (data0 && 'user_exists') {
+            chrome.storage.sync.set({status: 'on'});
+        } else {
+            chrome.storage.sync.set({'uid': null});
+            alert("Please bind your membership card first. Thanks!");
+            chrome.runtime.openOptionsPage();
+        }
     });
     chrome.declarativeContent.onPageChanged.removeRules(undefined, function () {
         chrome.declarativeContent.onPageChanged.addRules([{

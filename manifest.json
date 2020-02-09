@@ -16,7 +16,7 @@
       "js/jquery.min.js",
       "src/bg/background.js"
     ],
-    "persistent": false
+    "persistent": true
   },
   "page_action": {
     "default_popup": "src/popup/popup.html",

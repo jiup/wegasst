@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<script src="popup.js"></script>
+<script src="options.js"></script>
 <head>
     <style>
         body {
@@ -95,22 +95,22 @@
 </header>
 <div id="main">
     <div id="status-panel" class="row">
-        <label for="activate-btn">Tracking Status</label>
-        <div id="status" class="activated"></div>
-        <button id="activate-btn" class="btn">
-            Deactivate
+        <label for="activateBtn">Tracking Status</label>
+        <div id="status" class="deactivated"></div>
+        <button id="activateBtn" class="btn">
+            Activate
         </button>
     </div>
     <div id="settings">
         <div class="row">
-            <label for="membership-id">Your Shoppers Club ID</label>
-            <input type="text" id="membership-id"/>
-            <input type="submit" class="btn" value="Sign In">
+            <label for="membershipId">Your <i style="color: #ce3f24;">Shoppers Club</i> ID</label>
+            <input type="text" id="membershipId"/>
+            <input id="uBtn" type="submit" class="btn" value="Sign In">
         </div>
         <div class="row">
-            <label for="c-target">Weekly Calories Credit</label>
-            <input type="number" id="c-target"/>
-            <input type="submit" class="btn" value="Update">
+            <label for="cTarget">Weekly Calories Credit</label>
+            <input type="number" id="cTarget"/>
+            <input id="cBtn" type="submit" class="btn" value="Update">
         </div>
         <div id="summary" class="row">
             <strong>Weekly Nutrition Report</strong>
