@@ -30,11 +30,6 @@
       ],
       "css": [
         "src/inject/inject.css"
-      ]
-    },
-    {
-      "matches": [
-        "https://shop.wegmans.com/*"
       ],
       "js": [
         "src/inject/inject.js"

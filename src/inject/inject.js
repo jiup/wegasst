@@ -1,21 +1,22 @@
-chrome.extension.sendMessage({}, function(response) {
-    var readyStateCheckInterval = setInterval(function() {
-        if (document.readyState === "complete") {
-            clearInterval(readyStateCheckInterval);
+function onLoaded() {
+    // alert("Inject Done!");
+    console.log("Wegasst Inject Done.");
+    const items = document.getElementsByClassName("cell");
+    for (let i = 0; i < items.length; i++) {
+        items[i].style.border = "4px solid grey";
+    }
+    const itemBtns = document.getElementsByClassName("product-cell-add-to-cart");
+    for (let i = 0; i < itemBtns.length; i++) {
+        itemBtns[i].style.width = "101%";
+    }
+}
 
-            // ----------------------------------------------------------
-            // This part of the script triggers when page is done loading
-            console.log("Hello. This message was sent from scripts/inject.js");
-            // ----------------------------------------------------------
-            if(document.readyState === 'ready' || document.readyState === 'complete') {
-                alert("Inject Done1!");
-            } else {
-                document.onreadystatechange = function () {
-                    if (document.readyState == "complete") {
-                        alert("Inject Done2!");
-                    }
-                }
-            }
+chrome.extension.sendMessage({}, function (response) {
+    let readyStateCheckInterval = setInterval(function () {
+        let prodCount = document.getElementsByClassName('cell').length;
+        if (document.readyState === "complete" && prodCount > 2) {// && $("div.clearfix").length) {
+            clearInterval(readyStateCheckInterval);
+            onLoaded();
         }
-    }, 10);
+    }, 1000);
 });
