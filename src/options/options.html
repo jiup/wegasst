@@ -4,7 +4,7 @@
 <head>
     <style>
         body {
-            padding: 0;
+            padding: 0 0 80px 0;
             margin: 0;
             font-family: 'Roboto', arial, sans-serif;
             background-color: #eef3f7;
@@ -84,7 +84,50 @@
 
         #summary strong {
             font-size: .9rem;
-            text-decoration: underline
+            text-decoration: underline;
+        }
+
+        #recommend {
+            padding: 55px 0 10px 0;
+            font-size: .95rem;
+            text-align: left;
+        }
+
+        .recommendItem {
+            display: inline-block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px 0;
+            font-size: .9rem;
+            height: 80px;
+            background-color: white;
+            box-shadow: 0 6px 6px rgba(0,0,0,.03);
+            border: 1px solid #dedede;
+            border-radius: 4px;
+            color: black;
+        }
+
+        .recommendItem:hover {
+            box-shadow: 0 6px 6px rgba(0,0,0,.07);
+        }
+
+        .recommendItem div {
+            display: inline-block;
+            margin-left: 15px;
+        }
+
+        img.prodImg {
+            display: inline-block;
+            float: left;
+            margin-left: 10px;
+            width: 80px;
+            height: 80px;
+            background: #ddd;
+        }
+
+        .prodTitle {
+            font-weight: bold;
+            line-height: 1rem;
         }
     </style>
 </head>
@@ -121,6 +164,37 @@
                 <li>TODO</li>
             </ul>
         </div>
+        <div id="recommend" class="row">
+            <strong>Recommendations</strong>
+        </div>
+        <a href="https://www.google.com" class="recommendItem row">
+            <img src="https://dpsassetsstorageprod.blob.core.windows.net/images-500/071319000142.jpg?sv=2018-03-28&si=images-500-AssetSubcriber&sr=c&sig=zv%2BjKOyBk2%2Blc%2BpOhEUoGN5N12le72HSPRxbMsISrcs%3D" alt="" class="prodImg">
+            <div>
+                <span class="prodTitle">Product1</span>
+                <p>C: 100; <br/>D: 200; <br/>E: 300;</p>
+            </div>
+        </a>
+        <a class="recommendItem row">
+            <img src="" alt="" class="prodImg">
+            <div>
+                <span class="prodTitle">Product2</span>
+                <p>C: 100; <br/>D: 200; <br/>E: 300;</p>
+            </div>
+        </a>
+        <a class="recommendItem row">
+            <img src="" alt="" class="prodImg">
+            <div>
+                <span class="prodTitle">Product3</span>
+                <p>C: 100; <br/>D: 200; <br/>E: 300;</p>
+            </div>
+        </a>
+        <a class="recommendItem row">
+            <img src="" alt="" class="prodImg">
+            <div>
+                <span class="prodTitle">Product4</span>
+                <p>C: 100; <br/>D: 200; <br/>E: 300;</p>
+            </div>
+        </a>
     </div>
 </div>
 </body>
