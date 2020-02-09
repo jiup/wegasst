@@ -6,6 +6,7 @@
         body {
             width: 220px;
             text-align: center;
+            margin: 15px auto;
         }
 
         header {
@@ -17,6 +18,29 @@
         #main {
             text-align: center;
         }
+
+        #status {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border-radius: 7px;
+            margin-bottom: -3px;
+        }
+
+        .activated {
+            background-color: #56b947;
+        }
+
+        .deactivated {
+            background-color: #dddddd;
+        }
+
+        button {
+            margin-left: 10px;
+            background: white;
+            zoom: 1.05;
+            outline: none;
+        }
     </style>
 </head>
 <body>
@@ -24,6 +48,7 @@
     Wegmans Shopping Assistant
 </header>
 <div id="main">
+    <div id="status" class="activated"></div>
     <button id="btn">Deactivate</button>
 </div>
 </body>
