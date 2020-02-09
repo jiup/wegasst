@@ -2,8 +2,6 @@
 const colors = ["#b92929", "#faa828", "#56b947", "#00bcd4"];
 
 function onLoaded() {
-    // alert("Inject Done!");
-    console.log("Wegasst Inject Done.");
     const items = document.getElementsByClassName("cell");
     for (let i = 0; i < items.length; i++) {
         items[i].style.border = "4px solid #999";
@@ -19,7 +17,15 @@ chrome.extension.sendMessage({}, function (response) {
         let prodCount = document.getElementsByClassName('cell').length;
         if (document.readyState === "complete" && prodCount > 2) {
             clearInterval(readyStateCheckInterval);
-            onLoaded();
+            chrome.runtime.sendMessage({method: "getLocalStorage", key: "status"}, function (response) {
+                console.log(response.data);
+                if (response.data === 'on') {
+                    console.log("Wegasst Inject Done.");
+                    onLoaded();
+                } else {
+                    console.log("Wegasst Off.");
+                }
+            });
         }
     }, 1000);
 });
